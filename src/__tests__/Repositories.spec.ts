@@ -36,10 +36,9 @@ const gamesSeed: Pick<Game, 'title'>[] = [
     title: 'Rocket League',
   },
   {
-    title: 'The Last Of Us',
-  },
-  {
     title: 'Need For Speed: Most Wanted',
+  }, {
+    title: 'The Last Of Us',
   },
   {
     title: 'Need For Speed: Payback',
@@ -71,7 +70,7 @@ describe('Repositories', () => {
 
     await connection.runMigrations();
 
-    const [RL, TLOU, NFSMW, NFSP] = await ormGamesRepository.save(gamesSeed);
+    const [RL, NFSMW, TLOU, NFSP] = await ormGamesRepository.save(gamesSeed);
 
     const [vinicius, danilo, joseph, daniele] = usersSeed;
 
